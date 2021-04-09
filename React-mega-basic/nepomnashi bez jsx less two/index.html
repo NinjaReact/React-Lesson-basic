@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitsy less</title>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+
+    
+
+    <script>        
+        const Book  = () =>{
+             return React.createElement('div' ,{className : 'Books'} , [
+                 React.createElement('h2' , {} , 'Js for beginner'),
+                 React.createElement('p' , {} , 2010) ,
+                 React.createElement('p' , {} , '900 rub') ,
+             ])
+        }
+
+        //  Возвращает <div className="Books"> в котором находится "Массив" с h2 и двумя p
+
+
+            const Books = (props) =>{
+                return React.createElement('div' , {className : 'Books for object'} , [
+                    React.createElement('h2' , {} , props.name),
+                    React.createElement('p' , {} , props.year),
+                    React.createElement('p' , {} , props.price)
+                ])
+            }
+
+        const App = () => {
+           return React.createElement('div' , {className : 'AllApp'} , [
+            React.createElement('h2' , {id : 'app' , className : 'appi'} , 'Приложение с книгами ниже'),
+            
+            React.createElement(Book),//вызываем нашу функцию
+
+            React.createElement(Books , {name : 'React' , year : 2010 , price : 1200}),
+            React.createElement(Books , {name : 'Vue' , year : 2015 , price : 2020}),
+            React.createElement(Books , {name : 'Angular' , year : 2020 , price : 1564}),
+
+
+
+
+           ])
+        }
+        // чтобы вернуть обе функции нужно  вернуть React.createElement('div' , {className : 'AllApp'} , [])
+        //и внутри массива создать тело функции app и вызвать функцию book (React.createElement(Book))
+
+        ReactDOM.render(React.createElement(App) , document.getElementById('root'))
+
+
+        // вернуть и отрисовать можно только 1 приложение  
+
+        // чтобы зарендерить 2 приложения ( App и Book ) , необходимо вызвать приложение Book в приложение App (React.createElement(Book))
+ 
+    </script>
+</body>
+</html>
