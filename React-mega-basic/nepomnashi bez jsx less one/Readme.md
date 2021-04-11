@@ -25,7 +25,7 @@ React.createElement(
 
 ReactDOM.render(Что разворачиваем , куда разворачиваем)
 
-ReactDOM разворачивает функции App в **<div id="root"></div>**
+ReactDOM разворачивает функции App в **div id="root"**
 
 ```javascript
 ReactDOM.render(React.createElement(App), document.getElementById('root'))
