@@ -16,7 +16,7 @@ React.createElement(
   - React.createElement('p' , {} , props.year),
   - React.createElement('p' , {} , props.price)
     ]
-    ) --
+    )  
     в нашем случае текстовый тег , вместо массива указывается текст этого h1('Hello React')
 
 ---
