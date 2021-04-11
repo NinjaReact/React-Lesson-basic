@@ -36,7 +36,7 @@
 
         const App = () => {
            return React.createElement('div' , {className : 'AllApp'} , [
-            React.createElement('h2' , {id : 'app' , className : 'appi'} , 'Приложение с книгами ниже'),
+            React.createElement('h2' , {id : 'app' , className : 'app'} , 'Приложение с книгами ниже'),
             
             React.createElement(Book),//вызываем нашу функцию
 
@@ -50,7 +50,7 @@
            ])
         }
         // чтобы вернуть обе функции нужно  вернуть React.createElement('div' , {className : 'AllApp'} , [])
-        //и внутри массива создать тело функции app и вызвать функцию book (React.createElement(Book))
+        // и внутри массива создать тело функции app и вызвать функцию book (React.createElement(Book))
 
         ReactDOM.render(React.createElement(App) , document.getElementById('root'))
 
