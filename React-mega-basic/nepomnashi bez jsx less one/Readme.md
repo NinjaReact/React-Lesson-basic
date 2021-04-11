@@ -12,9 +12,9 @@ React.createElement(
 - название тега (h1)
 - Объект с className и id ({id: 'hello', className: 'class1'})
 - Массив дочерних элементов [
-  ...React.createElement('h2' , {} , props.name),
-  ...React.createElement('p' , {} , props.year),
-  ...React.createElement('p' , {} , props.price)
+  ⋅⋅⋅ React.createElement('h2' , {} , props.name),
+  ⋅⋅⋅ React.createElement('p' , {} , props.year),
+  ⋅⋅⋅ React.createElement('p' , {} , props.price)
   ]
   ) в нашем случае текстовый тег , вместо массива указывается текст этого h1('Hello React')
 
