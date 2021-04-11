@@ -21,11 +21,11 @@ React.createElement(
 
 ---
 
-Для выводы нашей функции на экран необходима библиотека ReactDOM
+Для вывода нашей функции на экран необходима библиотека ReactDOM
 
 ReactDOM.render(Что разворачиваем , куда разворачиваем)
 
-ReactDOM разворачивает функции App в <div id="root"></div>
+ReactDOM разворачивает функции App в **<div id="root"></div>**
 
 ```javascript
 ReactDOM.render(React.createElement(App), document.getElementById('root'))
