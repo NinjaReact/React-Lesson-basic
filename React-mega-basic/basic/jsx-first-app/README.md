@@ -30,4 +30,32 @@ const Books = props => {
 
 ---
 
-`React.createElement('h2', {}, props.name) == <h2>{props.name}</h2>`
+`javascript React.createElement('h2', {}, props.name) == <h2>{props.name}</h2>`
+
+---
+
+Для передачи информации в тег из props , необходимо написать тег и в тело тега внести название поля переданного объекта в {} (<h2>{props.name}</h2>)
+
+---
+
+**Вызов функции books в функции Apps c JSX ↓ ** мы вызываем функцию books в <> , а не пишем React.createElement
+
+```javascript
+const Apps = () => {
+	return (
+		<div className='BOOKS FOR JS'>
+			<Books name='Angular' year='2017' price='1700' />
+		</div>
+	)
+}
+```
+
+**без JSX ↓**
+
+```javascript
+const App = () => {
+	return React.createElement('div', {className: 'AllApp'}, [
+		React.createElement(Books, {name: 'Angular', year: 2020, price: 1564}),
+	])
+}
+```
