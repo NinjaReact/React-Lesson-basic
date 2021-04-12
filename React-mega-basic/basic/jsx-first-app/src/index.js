@@ -1,17 +1,29 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import './index.css'
+import App from './App'
+import reportWebVitals from './reportWebVitals'
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+const Books = props => {
+	return (
+		<div className='BOOK'>
+			<h2>{props.name}</h2>
+			<p>{props.year}</p>
+			<p>{props.price}</p>
+		</div>
+	)
+}
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+const Apps = () => {
+	return (
+		<div className='BOOKS FOR JS'>
+			<Books name='React' year='2010' price='1200' />
+			<Books name='Vue' year='2015' price='1500' />
+			<Books name='Angular' year='2017' price='1700' />
+		</div>
+	)
+}
+
+ReactDOM.render(React.createElement(Apps), document.getElementById('root'))
+
+reportWebVitals()
