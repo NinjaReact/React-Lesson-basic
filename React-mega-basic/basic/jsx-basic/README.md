@@ -163,3 +163,69 @@ const Books = props => {
 
 export {Books}
 ```
+
+---
+
+**Preloader**
+
+_Кастомный прелоадер пока не используется контроль состояния_
+
+**Preloader.jsx ↓**
+
+```javascript
+import React from 'react'
+
+const Preloader = () => {
+	return <h3>Идет загрузка...</h3>
+}
+
+export {Preloader}
+```
+
+_Компанент позвращающий h3 с загрузкой_
+
+**index.jsx**
+
+```javascript
+import React from 'react'
+import ReactDOM from 'react-dom'
+import App from './App.jsx'
+
+const iSloading = false
+
+ReactDOM.render(
+	<React.StrictMode>
+		<App iSloading={iSloading} />
+	</React.StrictMode>,
+	document.getElementById('root')
+)
+```
+
+---
+
+###### Создаем props (const iSloading = false) и передаем его в App.jsx _<App iSloading={iSloading} />_
+
+_Состояния iSloading - false и мы наблюдаем за ним _
+
+**App.jsx ↓**
+
+```javascript
+import React from 'react'
+import {Books} from './Books'
+import {Preloader} from './Preloader'
+
+const App = props => {
+	return props.iSloading ? (
+		<Preloader />
+	) : (
+		<div>
+			<Books name='Vue' year='2010' price='1111' />
+			<Books name='Angular' year='2015' price='2222' />
+			<Books name='React' year='2020' price='3333' />
+		</div>
+	)
+}
+export default App
+```
+
+**Импортируем Preloader.jsx** далее создаем тернарный оператор , если он не поменялся и находится в состоянии false то отрисовывай <Preloader /> иначе отрисовывай книги
