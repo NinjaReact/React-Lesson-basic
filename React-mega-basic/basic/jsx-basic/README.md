@@ -182,7 +182,7 @@ const Preloader = () => {
 export {Preloader}
 ```
 
-_Компанент позвращающий h3 с загрузкой_
+_Компанент возвращающий h3 с загрузкой_
 
 **index.jsx**
 
@@ -203,9 +203,9 @@ ReactDOM.render(
 
 ---
 
-###### Создаем props (const iSloading = false) и передаем его в App.jsx _<App iSloading={iSloading} />_
+##### Создаем props (const iSloading = false) и передаем его в App.jsx \_<App iSloading={iSloading} />
 
-_Состояния iSloading - false и мы наблюдаем за ним _
+_Состояния iSloading - false и мы наблюдаем за ним_
 
 **App.jsx ↓**
 
@@ -228,4 +228,4 @@ const App = props => {
 export default App
 ```
 
-**Импортируем Preloader.jsx** далее создаем тернарный оператор , если он не поменялся и находится в состоянии false то отрисовывай <Preloader /> иначе отрисовывай книги
+**Импортируем Preloader.jsx** далее создаем тернарный оператор , если он не поменялся и находится в состоянии false то отрисовывай Preloader иначе отрисовывай книги
