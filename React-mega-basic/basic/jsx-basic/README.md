@@ -120,3 +120,46 @@ ReactDOM.render(
 **ReactDOM.render** - _Вызов_
 
 ---
+
+**Условная отрисовка**
+
+**Если не приходит props.name , то не отрисуй ничего if(!props.name)**
+_если при вызове функции не передали name , то функция вернет null => ничего не отрисует_ **↓**
+
+```javascript
+import React from 'react'
+
+const Books = props => {
+	if (!props.name) {
+		return null
+	}
+
+	return (
+		<div>
+			<h2>{props.name ? props.name : 'default book'}</h2>
+			<p>Книга : {props.year} года</p>
+			<p>{props.price}</p>
+		</div>
+	)
+}
+
+export {Books}
+```
+
+**Использование тернарного оператора ↓**
+
+```javascript
+import React from 'react'
+
+const Books = props => {
+	return props.name ? (
+		<div>
+			<h2>{props.name ? props.name : 'default book'}</h2>
+			<p>Книга : {props.year} года</p>
+			<p>{props.price}</p>
+		</div>
+	) : null
+}
+
+export {Books}
+```

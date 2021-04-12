@@ -1,6 +1,11 @@
 import React from 'react'
 
 const Books = props =>{
+
+    if (!props.name){
+      return null
+    }
+
     return (
       <div>
         <h2>{props.name ? props.name : 'default book'}</h2>
