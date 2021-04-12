@@ -30,4 +30,4 @@ const Books = props => {
 
 ---
 
-`**React.createElement('h2', {}, props.name) == <h2>{props.name}</h2>**`
+`React.createElement('h2', {}, props.name) == <h2>{props.name}</h2>`
