@@ -30,3 +30,18 @@ _если удаляется файлик , то нужно удалить за�
 ---
 
 **yarn start** - запуск react app
+
+**index.js без лишнего ↓**
+
+```javascript
+import React from 'react'
+import ReactDOM from 'react-dom'
+import App from './App'
+
+ReactDOM.render(
+	<React.StrictMode>
+		<App />
+	</React.StrictMode>,
+	document.getElementById('root')
+)
+```
