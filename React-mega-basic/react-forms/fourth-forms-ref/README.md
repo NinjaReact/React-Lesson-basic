@@ -1,0 +1,93 @@
+# Ref
+
+---
+
+```JavaScript
+import React , {Component} from 'react'
+
+class FormRef extends Component {
+    constructor(){
+        super();
+        this.state = {
+            card : '',
+            email : '',
+
+        }
+        this.cardRef = React.createRef()
+        this.emailRef = React.createRef()
+    }
+
+    handleChangeInput = (event) =>{
+        this.setState(()=>({[event.target.name] : event.target.value}) , ()=>{
+            if(this.state.card.length === 16){
+                this.emailRef.current.focus()
+            }
+        })
+    }
+
+    componentDidMount(){
+        this.cardRef.current.focus()
+    }
+
+    render(){
+        const {card , email} = this.state
+        return(
+            <div>
+                <input type="text" name="card" placeholder='card' value={card} onChange={this.handleChangeInput} ref={this.cardRef}/>
+                <input type="email" name="email" placeholder='email' value={email} onChange={this.handleChangeInput} ref={this.emailRef}/>
+            </div>
+        )
+    }
+}
+export {FormRef}
+```
+
+---
+
+**Создание Ref ↓**
+
+```JavaScript
+    constructor(){
+        super();
+        this.state = {
+            card : '',
+            email : '',
+
+        }
+        this.firstNameRef = React.createRef()
+        this.emailRef = React.createRef()
+    }
+```
+
+---
+
+**Присвоение Ref ↓** _ref={this.cardRef}_
+
+```JavaScript
+<input type="text" name="card" placeholder='card' value={card} onChange={this.handleChangeInput} ref={this.cardRef}/>
+<input type="email" name="email" placeholder='email' value={email} onChange={this.handleChangeInput} ref={this.emailRef}/>
+```
+
+---
+
+**При прогрузке приложения будет фокус на на инпут card**
+
+```JavaScript
+    componentDidMount(){
+        this.cardRef.current.focus()
+    }
+```
+
+---
+
+**Добавляем в Setstate колбек и из за условия перемещаем фокус на другой инпут**
+
+```JavaScript
+    handleChangeInput = (event) =>{
+        this.setState(()=>({[event.target.name] : event.target.value}) , ()=>{
+            if(this.state.card.length === 16){
+                this.emailRef.current.focus()
+            }
+        })
+    }
+```
