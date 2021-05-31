@@ -1,10 +1,20 @@
 import React , {useState} from 'react'
 
 function App(){
-  const [value , setValue] = useState(0)
-  const [value2 , setValue] = useState()
+  const [count , setCount] = useState(0)
+
+  const increment = () => {
+    setCount(count + 1)
+  }
+  const decrement = () => {
+    setCount(count - 1)
+  }
   return (
-    <div className='App'></div>
+    <div className='App'>
+      <button onClick={decrement}> - </button>
+      <span>{count}</span>
+      <button onClick={increment}> + </button>
+    </div>
   )
 }
 
